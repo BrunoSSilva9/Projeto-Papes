@@ -1,0 +1,13 @@
+:root {
+    --primary-orange: #FE7547;
+    --light-cream: #FFF3E3;
+    --dark-text: #333;
+    --light-text: #fff;
+    --border-color: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
