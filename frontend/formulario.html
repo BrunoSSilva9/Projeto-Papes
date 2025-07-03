@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Inscrição - Apoio Psicológico Unifesspa</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-links">
+                <a href="#">PRINCIPAL</a>
+                <a href="#">SOBRE</a>
+                <a href="#" class="active">FORMULÁRIO</a>
+            </div>
+            <button class="menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="form-section">
+            <div class="form-card">
+                <h1>Ficha de Inscrição</h1>
+                <form id="inscricaoForm">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Daniel Rodrigues Mendes">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="daniel.mendes@unifesspa.edu.br">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone">
+                    </div>
+                    <div class="form-group">
+                        <label for="curso">Curso</label>
+                        <select id="curso" name="curso">
+                            <option value="" disabled selected>Escolha seu curso</option>
+                            <option value="psicologia">Psicologia</option>
+                            <option value="si">Sistemas de Informação</option>
+                            <option value="ec">Engenharia da Computação</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="data-nascimento">Data de Nascimento</label>
+                        <input type="text" id="data-nascimento" name="data-nascimento" placeholder="00/00/0000">
+                    </div>
+                    <div class="form-group">
+                        <label for="matricula">Matrícula</label>
+                        <input type="text" id="matricula" name="matricula" placeholder="Digite sua matrícula">
+                    </div>
+                    <div class="form-group">
+                        <label for="motivo">Deseja escrever o motivo do porque acha que precisa de acompanhamento psicológico? <span class="optional">(Opcional)</span></label>
+                        <textarea id="motivo" name="motivo" rows="5"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+        <div class="illustration-section">
+             <img src="/assets/images/illustration-form.svg" alt="Ilustração de uma pessoa segurando máscaras de emoções">
+        </div>
+    </main>
+
+</body>
+</html>
