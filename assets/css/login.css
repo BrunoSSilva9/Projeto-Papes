@@ -47,7 +47,13 @@ body {
     color: var(--light-text);
     text-decoration: none;
     margin-right: 2rem;
-    font-weight: 500;
+    color: #FFF;
+    text-align: center;
+    font-family: "Nunito Sans";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 /* .main-nav a.active {
@@ -160,9 +166,13 @@ input:focus {
 }
 
 .info-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
     margin-bottom: 2rem;
+    color: #000;
+    font-family: "Nunito Sans";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 .info-content img {

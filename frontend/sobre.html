@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/sobre.css">
     <title>Sobre</title>
 </head>
 
@@ -20,27 +20,38 @@
 
     <div class="conteudo-pagina">
         <header class="header-container">
-            <nav class="navegacao">
+            <nav class="navegacao-sobre">
                 <ul>
                     <li><a href="index.html">PRINCIPAL</a></li>
                     <li><a href="sobre.html" class="sobre">SOBRE</a></li>
                     <li><a href="formulario.html">FORMULÁRIO</a></li>
                 </ul>
             </nav>
-            <span class="material-symbols-outlined menu-icon">menu</span>
+            
+            <div class="menu-container">
+                <button class="menu-button" id="menuButton">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="index.html">SAIR</a>
+                    <a href="https://www.unifesspa.edu.br/">UNIFESSPA</a>
+                    <a href="login.html">LOGIN</a>
+                </div>
+            </div>
         </header>
 
 
-        <main>
+        <main class="content-sobre">
 
-            <h1>Programa de Acompanhamento<br>Psicológico Estudantil</h1>
+            <h1 class="titulo-sobre">Programa de Acompanhamento<br>Psicológico Estudantil</h1>
 
             <div class="fields-about">
                 <a href="sobre-1.html" class="field-1">SOBRE O PAPSE</a>
                 <a href="sobre-2.html" class="field-2">PAPSE NA UNIFESSPA</a>
             </div>
 
-            <p class="paragraph">
+            <p class="paragraph-sobre">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget faucibus lectus, nec gravida eros. Sed vel fermentum leo, nec interdum eros.
                 Nullam vel suscipit ligula, at interdum leo. Etiam non tempus neque. Quisque molestie hendrerit massa ornare tristique.
                 Pellentesque molestie nisl felis. Morbi at molestie massa, non malesuada orci. Vestibulum iaculis condimentum nunc, eget pretium orci volutpat sed.
@@ -50,7 +61,7 @@
             </p>
 
 
-
+            <script src="/assets/js/sobre.js" defer></script>
 
         </main>
 

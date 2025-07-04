@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Inscrição - Apoio Psicológico Unifesspa</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/formulario.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,22 +14,27 @@
 
 <body>
 
-    <header class="main-header">
-        <nav class="main-nav">
-            <div class="nav-links">
-                <a href="#">PRINCIPAL</a>
-                <a href="#">SOBRE</a>
-                <a href="#" class="active">FORMULÁRIO</a>
-            </div>
-            <button class="menu-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
+<header class="main-header">
+    <nav class="main-nav">
+        <div class="nav-links">
+            <a href="index.html">PRINCIPAL</a>
+            <a href="sobre.html">SOBRE</a>
+            <a href="formulario.html" class="active">FORMULÁRIO</a>
+        </div>
+
+        <div class="menu-container">
+            <button class="menu-button" id="menuButton">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
-        </nav>
-    </header>
+            
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="index.html">SAIR</a>
+                <a href="https://www.unifesspa.edu.br/">UNIFESSPA</a>
+                <a href="login.html">LOGIN</a>
+            </div>
+        </div>
+    </nav>
+</header>
 
     <main class="content-wrapper">
         <div class="form-section">
@@ -79,6 +84,7 @@
         </div>
     </main>
 
+    <script src="/assets/js/formulario.js" defer></script>
 </body>
 
 </html>

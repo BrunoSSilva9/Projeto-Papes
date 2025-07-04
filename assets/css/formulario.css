@@ -1,3 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+:root {
+    --primary-orange: #FE7547;
+    --light-cream: #FFF3E3;
+    --dark-text: #333;
+    --light-text: #fff;
+    --border-color: #e0e0e0;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--light-cream);
@@ -40,15 +54,17 @@ body::before {
 .nav-links{
     display: flex;
     flex-wrap: wrap;
+    gap: 25px;
 }
 
 .nav-links a {
     color: var(--light-text);
+    font-family: "Nunito Sans", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 34px;
     text-decoration: none;
-    margin-right: 2.5rem;
-    font-weight: 500;
-    font-size: 1.1rem;
-    padding-bottom: 5px;
 }
 
 /* .nav-links a.active {
@@ -61,7 +77,6 @@ body::before {
     border: none;
     color: var(--primary-orange);
     cursor: pointer;
-    padding-left: 1600px;
 }
 .menu-button svg {
     width: 32px;
@@ -79,8 +94,8 @@ body::before {
 }
 
 .form-section {
-    margin-top: 150px;
-    /* flex-basis: 50%; */
+    /* margin-top: 150px; */
+    flex-basis: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,6 +192,47 @@ select {
 
 .submit-btn:hover {
     background-color: #e07a5f;
+}
+
+
+.menu-container {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    right: 0; 
+    width: 436px;
+    height: 214px;
+    background-color: #FFF;
+    border-radius: 26px;
+    border: 3px solid rgba(155, 155, 155, 0.63);
+    box-shadow: 10px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-family: "Nunito Sans";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: left;
+    padding: 15px 15px;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
 }
 
 
