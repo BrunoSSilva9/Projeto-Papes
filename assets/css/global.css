@@ -1,14 +1,13 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+    --primary-orange: #FE7547;
+    --light-cream: #FFF3E3;
+    --dark-text: #333;
+    --light-text: #fff;
+    --border-color: #e0e0e0;
 }
 
-html,
-body {
-  height: 100%;
-  width: 100%;
-  /* background-color: #fff3e3; */
-  overflow: hidden;
-  font-family: "Nunito Sans", sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
