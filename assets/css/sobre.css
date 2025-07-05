@@ -8,7 +8,7 @@ html, body {
     height: 100%; 
     width: 100%;  
     background-color: #5773D3;
-    overflow: hidden; 
+    /* overflow: hidden;  */
     font-family: "Nunito Sans", sans-serif; 
 }
 
