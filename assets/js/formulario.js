@@ -30,7 +30,7 @@ formulario.addEventListener("submit", async function (event) {
   };
 
   try {
-    const response = await fetch("http://localhost:3001/formularios", {
+    const response = await fetch("http://localhost:3000/inscricoes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

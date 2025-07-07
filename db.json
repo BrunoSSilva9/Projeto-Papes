@@ -1,5 +1,5 @@
 {
-  "formularios": [
+  "inscricoes": [
     {
       "id": "3531",
       "nome": "André Santos de Souza",
@@ -9,6 +9,16 @@
       "dataNascimento": "21/01/2004",
       "matricula": "202300001111",
       "motivo": "Teste"
+    },
+    {
+      "id": "dec0",
+      "nome": "BRUNO DA SILVA DOS SANTOS",
+      "email": "bahvav@gmail.com",
+      "telefone": "32145214",
+      "curso": "psicologia",
+      "dataNascimento": "20/01/2003",
+      "matricula": "2023414562",
+      "motivo": "nop"
     }
   ]
 }
