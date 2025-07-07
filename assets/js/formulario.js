@@ -27,10 +27,11 @@ formulario.addEventListener("submit", async function (event) {
     dataNascimento: formulario["data-nascimento"].value,
     matricula: formulario.matricula.value,
     motivo: formulario.motivo.value,
+    status: "lista_de_espera",
   };
 
   try {
-    const response = await fetch("http://localhost:3001/formularios", {
+    const response = await fetch("http://localhost:3000/inscricoes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
