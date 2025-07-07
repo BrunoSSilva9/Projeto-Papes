@@ -213,3 +213,54 @@ body {
 .dropdown-menu a:hover {
   background-color: #f5f5f5;
 }
+
+
+/* Contêiner para o botão '...' e o menu dropdown */
+.card-actions {
+    position: relative;
+}
+
+/* Botão de três pontos */
+.menu-tres-pontos-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0 5px;
+    color: var(--text-secondary);
+}
+
+/* Dropdown do card (escondido por padrão) */
+.card-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 10;
+    min-width: 250px;
+    border: 1px solid var(--border-color);
+    overflow: hidden; /* Garante que os cantos arredondados funcionem */
+}
+
+/* Classe para mostrar o dropdown */
+.card-dropdown-menu.active {
+    display: block;
+}
+
+/* Links dentro do dropdown */
+.card-dropdown-menu a {
+    display: block;
+    padding: 12px 15px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.card-dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
