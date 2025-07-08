@@ -16,8 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json())
     .then((inscricoes) => {
       const contadores = {
-        lista_de_espera: 0,
-        espera_regulares: 0,
         atendimento_protocolo: 0,
         atendimento_regular: 0,
       };

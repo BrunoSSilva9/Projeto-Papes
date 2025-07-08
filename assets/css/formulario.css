@@ -197,6 +197,10 @@ select {
 
 .menu-container {
     position: relative;
+    background-color: #ffffff;
+    width: 40px;
+    height: 30px;
+    border-radius: 6px;
 }
 
 .dropdown-menu {
@@ -270,5 +274,40 @@ select {
     .nav-links a {
         margin-right: 1rem;
         font-size: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    body::before {
+       transform: skewX(0);
+       width: 100%;
+       height: 40%;
+    }
+    .content-wrapper {
+        padding: 1rem;
+        padding-top: 3rem;
+    }
+    .illustration-section {
+        width: 80%;
+        display: none; 
+    }
+    .form-card {
+        padding: 2rem;
+    }
+    .main-nav {
+        padding: 0 1rem;
+    }
+    .nav-links a {
+        margin-right: 1rem;
+        font-size: 1rem;
+    }
+}
+@media (max-width: 1200px) {
+    .content-wrapper {
+        flex-direction: column;
+        padding-top: 5rem;
+    }
+
+    .illustration-section {
+        display: none; 
     }
 }
