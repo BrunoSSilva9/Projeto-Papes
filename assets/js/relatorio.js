@@ -1,21 +1,47 @@
-let todosOsPacientes = [];
-
-function renderizarPacientes(pacientes) {
+document.addEventListener("DOMContentLoaded", async () => {
   const container = document.getElementById("relatorio-container");
-  container.innerHTML = "";
+  const filtroPesquisaInput = document.getElementById("filtro-pesquisa");
+  const filtroAnoSelect = document.getElementById("filtro-ano");
+  const filtroCursoSelect = document.getElementById("filtro-curso");
+  const filtroIdadeInput = document.getElementById("filtro-idade");
+  const idadeValorSpan = document.getElementById("idade-valor");
 
-  if (pacientes.length === 0) {
-    container.innerHTML =
-      "<p>Nenhum registro encontrado com os filtros aplicados.</p>";
-    return;
+  let pacientesEncerrados = [];
+
+  function calcularIdade(dataNascimento) {
+    if (!dataNascimento) return null;
+    let dia, mes, ano;
+
+    if (dataNascimento.includes("-")) {
+      [ano, mes, dia] = dataNascimento.split("-").map(Number);
+    } else if (dataNascimento.includes("/")) {
+      [dia, mes, ano] = dataNascimento.split("/").map(Number);
+    } else {
+      return null;
+    }
+    const hoje = new Date();
+    const nasc = new Date(ano, mes - 1, dia);
+    let idade = hoje.getFullYear() - nasc.getFullYear();
+    const m = hoje.getMonth() - nasc.getMonth();
+    if (m < 0 || (m === 0 && hoje.getDate() < nasc.getDate())) {
+      idade--;
+    }
+    return idade;
   }
 
-  pacientes.forEach((paciente) => {
-    const dataEncerramento = new Date(
-      paciente.dataEncerramento
-    ).toLocaleDateString("pt-BR");
+  function renderizarPacientes(listaDePacientes) {
+    container.innerHTML = "";
+    if (listaDePacientes.length === 0) {
+      container.innerHTML =
+        "<p>Nenhum registro encontrado com os filtros aplicados.</p>";
+      return;
+    }
+    listaDePacientes.forEach((paciente) => {
+      const dataEncerramento = paciente.dataEncerramento
+        ? new Date(paciente.dataEncerramento).toLocaleDateString("pt-BR")
+        : "N/A";
 
-    const cardHTML = `
+      const cardHTML = `
             <div class="paciente-card" data-id="${paciente.id}">
                 <div class="card-header">
                     <span>Atendimento Encerrado</span>
@@ -43,6 +69,9 @@ function renderizarPacientes(pacientes) {
                     <p><strong>Matrícula:</strong> <span>${
                       paciente.matricula
                     }</span></p>
+                    <p><strong>Idade:</strong> <span>${
+                      calcularIdade(paciente.dataNascimento) || "N/A"
+                    }</span></p>
                     <p><strong>Bolsista:</strong> <span>${
                       paciente.bolsista || "N/A"
                     }</span></p>
@@ -52,112 +81,74 @@ function renderizarPacientes(pacientes) {
                 </div>
             </div>
         `;
-    container.innerHTML += cardHTML;
-  });
-}
-
-function aplicarFiltros() {
-  const termoBusca = document
-    .getElementById("filtro-pesquisa")
-    .value.toLowerCase();
-  const anoSelecionado = document.getElementById("filtro-ano").value;
-  const cursoSelecionado = document.getElementById("filtro-curso").value;
-  const idadeMaxima = document.getElementById("filtro-idade").value;
-
-  let pacientesFiltrados = todosOsPacientes;
-
-  if (termoBusca) {
-    pacientesFiltrados = pacientesFiltrados.filter((p) =>
-      p.nome.toLowerCase().includes(termoBusca)
-    );
+      container.innerHTML += cardHTML;
+    });
   }
-  if (anoSelecionado) {
-    pacientesFiltrados = pacientesFiltrados.filter(
-      (p) => new Date(p.dataEncerramento).getFullYear() == anoSelecionado
-    );
-  }
-  if (cursoSelecionado) {
-    pacientesFiltrados = pacientesFiltrados.filter(
-      (p) => p.curso === cursoSelecionado
-    );
-  }
-  const calcularIdade = (dataNasc) => {
-    if (!dataNasc) return 0;
-    const hoje = new Date();
-    const nasc = new Date(dataNasc);
-    let idade = hoje.getFullYear() - nasc.getFullYear();
-    const m = hoje.getMonth() - nasc.getMonth();
-    if (m < 0 || (m === 0 && hoje.getDate() < nasc.getDate())) idade--;
-    return idade;
-  };
-  pacientesFiltrados = pacientesFiltrados.filter(
-    (p) => calcularIdade(p.dataNascimento) <= idadeMaxima
-  );
 
-  renderizarPacientes(pacientesFiltrados);
-}
+  function aplicarFiltros() {
+    const textoBusca = filtroPesquisaInput.value.toLowerCase().trim();
+    const cursoSelecionado = filtroCursoSelect.value;
+    const anoSelecionado = filtroAnoSelect.value;
+    const idadeSelecionada = parseInt(filtroIdadeInput.value, 10);
 
-document.addEventListener("DOMContentLoaded", async () => {
+    const pacientesFiltrados = pacientesEncerrados.filter((paciente) => {
+      const nomeMatch =
+        textoBusca === "" || paciente.nome.toLowerCase().includes(textoBusca);
+      const cursoMatch =
+        cursoSelecionado === "" || paciente.curso === cursoSelecionado;
+      const anoMatch =
+        anoSelecionado === "" ||
+        (paciente.dataEncerramento &&
+          new Date(paciente.dataEncerramento).getFullYear() == anoSelecionado);
+      const idade = calcularIdade(paciente.dataNascimento);
+      const idadeMatch =
+        idadeSelecionada >= 40 || (idade !== null && idade <= idadeSelecionada);
+
+      return nomeMatch && cursoMatch && anoMatch && idadeMatch;
+    });
+
+    renderizarPacientes(pacientesFiltrados);
+  }
+
   try {
     const response = await fetch(
       "http://localhost:3000/inscricoes?status=encerrado"
     );
-    todosOsPacientes = await response.json();
+    pacientesEncerrados = await response.json();
 
-    const anos = [
-      ...new Set(
-        todosOsPacientes
-          .map((p) =>
-            p.dataEncerramento
-              ? new Date(p.dataEncerramento).getFullYear()
-              : null
-          )
-          .filter((ano) => ano)
-      ),
-    ];
-    const cursos = [...new Set(todosOsPacientes.map((p) => p.curso))];
-
-    const filtroAno = document.getElementById("filtro-ano");
-    anos
-      .sort()
-      .forEach(
-        (ano) =>
-          (filtroAno.innerHTML += `<option value="${ano}">${ano}</option>`)
-      );
-
-    const filtroCurso = document.getElementById("filtro-curso");
-    cursos.forEach(
-      (curso) =>
-        (filtroCurso.innerHTML += `<option value="${curso}">${curso}</option>`)
-    );
-
-    document
-      .getElementById("filtro-pesquisa")
-      .addEventListener("input", aplicarFiltros);
-    document
-      .getElementById("filtro-ano")
-      .addEventListener("change", aplicarFiltros);
-    document
-      .getElementById("filtro-curso")
-      .addEventListener("change", aplicarFiltros);
-    document.getElementById("filtro-idade").addEventListener("input", (e) => {
-      document.getElementById(
-        "idade-valor"
-      ).textContent = `15 - ${e.target.value}`;
-      aplicarFiltros();
+    const anoFim = new Date().getFullYear();
+    for (let ano = 2019; ano <= anoFim; ano++) {
+      filtroAnoSelect.innerHTML += `<option value="${ano}">${ano}</option>`;
+    }
+    const cursos = [...new Set(pacientesEncerrados.map((p) => p.curso))];
+    cursos.forEach((curso) => {
+      if (curso)
+        filtroCursoSelect.innerHTML += `<option value="${curso}">${curso}</option>`;
     });
 
-    renderizarPacientes(todosOsPacientes);
+    renderizarPacientes(pacientesEncerrados);
+
+    filtroPesquisaInput.addEventListener("input", aplicarFiltros);
+    filtroCursoSelect.addEventListener("change", aplicarFiltros);
+    filtroAnoSelect.addEventListener("change", aplicarFiltros);
+    filtroIdadeInput.addEventListener("input", () => {
+      idadeValorSpan.textContent = `15 - ${filtroIdadeInput.value}`;
+      if (filtroIdadeInput.value >= 40) {
+        idadeValorSpan.textContent = "Todos";
+      }
+      aplicarFiltros();
+    });
   } catch (error) {
-    console.error("Erro ao carregar relatório:", error);
+    console.error(
+      "Erro ao carregar e configurar a página de relatórios:",
+      error
+    );
+    container.innerHTML =
+      "<p>Ocorreu um erro ao carregar os dados. Verifique a conexão com a API e o console (F12).</p>";
   }
-});
 
-document
-  .getElementById("relatorio-container")
-  .addEventListener("click", function (event) {
+  container.addEventListener("click", function (event) {
     const target = event.target;
-
     if (target.classList.contains("toggle-details-btn")) {
       const card = target.closest(".paciente-card");
       card.classList.toggle("expanded");
@@ -165,7 +156,6 @@ document
         ? "Ver menos"
         : "Ver mais";
     }
-
     if (target.classList.contains("menu-tres-pontos-btn")) {
       const menu = target.nextElementSibling;
       document
@@ -176,3 +166,4 @@ document
       menu.classList.toggle("active");
     }
   });
+});

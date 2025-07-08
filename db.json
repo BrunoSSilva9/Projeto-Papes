@@ -65,7 +65,8 @@
       "dataNascimento": "22/07/2004",
       "matricula": "2023002",
       "motivo": "Crise de ansiedade",
-      "status": "atendimento_protocolo"
+      "status": "encerrado",
+      "dataEncerramento": "2025-07-08T17:56:07.495Z"
     },
     {
       "id": "i9j0k1l2",
@@ -76,7 +77,8 @@
       "dataNascimento": "10/11/2002",
       "matricula": "2023003",
       "motivo": "Busca por orientação vocacional",
-      "status": "lista_de_espera"
+      "status": "encerrado",
+      "dataEncerramento": "2025-07-08T19:02:21.919Z"
     },
     {
       "id": "m3n4o5p6",
@@ -255,7 +257,7 @@
       "matricula": "2023019",
       "motivo": "Dificuldade de concentração",
       "status": "encerrado",
-      "dataEncerramento": "2025-07-08T02:58:55.745Z"
+      "dataEncerramento": "2022-07-08T02:58:55.745Z"
     },
     {
       "id": "y7z8a9b0",
@@ -354,7 +356,8 @@
       "dataNascimento": "24/08/2003",
       "matricula": "2023028",
       "motivo": "Só aguardando vaga",
-      "status": "espera_regulares"
+      "status": "encerrado",
+      "dataEncerramento": "2020-07-08T14:19:17.154Z"
     },
     {
       "id": "i3j4k5l6",
@@ -608,8 +611,7 @@
       "motivo": "tratamento psic",
       "status": "encerrado",
       "id": "j7VOdBj",
-      "dataEncerramento": "2025-07-08T03:44:43.222Z",
-      "motivo": "Teste"
+      "dataEncerramento": "2025-07-08T03:44:43.222Z"
     },
     {
       "id": "dec0",
@@ -619,7 +621,32 @@
       "curso": "psicologia",
       "dataNascimento": "20/01/2003",
       "matricula": "2023414562",
-      "motivo": "nop"
+      "motivo": "nop",
+      "status": "atendimento_regular"
+    },
+    {
+      "nome": "Bruno Silva",
+      "email": "brunos@gmail.com",
+      "telefone": "94992576200",
+      "curso": "si",
+      "dataNascimento": "2004-02-09",
+      "matricula": "2023524789",
+      "motivo": "nao",
+      "dataEnvio": "2025-07-08T18:59:12.048Z",
+      "status": "lista_de_espera",
+      "id": "ZYwoXt4"
+    },
+    {
+      "nome": "Daniel jones",
+      "email": "brunos@gmail.com",
+      "telefone": "94992576200",
+      "curso": "psicologia",
+      "dataNascimento": "2002-05-16",
+      "matricula": "202340602007",
+      "motivo": "Na",
+      "dataEnvio": "2025-07-08T19:02:01.127Z",
+      "status": "lista_de_espera",
+      "id": "h4546ig"
     }
   ]
 }
