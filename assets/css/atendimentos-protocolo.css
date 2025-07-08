@@ -1,100 +1,231 @@
-/* /assets/css/atendimentos-protocolo.css */
-
-/* Definições de Cores e Fontes */
 :root {
-    --color-blue: #4A90E2;
-    --color-dark-blue: #3B5998; /* Cor usada no banner desta página */
-    --text-primary: #333;
-    --text-secondary: #777;
-    --background-light: #f8f9fa;
-    --border-color: #e9ecef;
+  --color-blue: #4a90e2;
+  --color-dark-blue: #2b468b;
+  --text-primary: #333;
+  --text-secondary: #777;
+  --background-light: #f8f9fa;
+  --border-color: #e9ecef;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--background-light);
-    color: var(--text-primary);
-    margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-primary);
+  margin: 0;
 }
 
 .admin-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-/* Cabeçalho e Banner */
-.main-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}.header-title{font-size:1.5rem}.breadcrumb{color:var(--text-secondary);font-weight:400}.banner-lista{background-color:var(--color-dark-blue);color:white;padding:2rem;border-radius:12px;margin:2rem 0;display:flex;justify-content:space-between;align-items:center}.banner-lista h2{margin:0;font-size:2rem}.toolbar{margin-bottom:1rem}.listas-btn{background:none;border:none;cursor:pointer;font-size:1rem;display:flex;align-items:center;gap:.5rem;color:var(--text-secondary)}.search-container{position:relative;margin-bottom:2rem}.search-container .search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--text-secondary)}#pesquisa{width:100%;padding:12px 12px 12px 45px;border-radius:25px;border:1px solid var(--border-color);font-size:1rem}
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.header-title {
+  font-size: 1.5rem;
+}
+.breadcrumb {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+.banner-lista {
+  background-color: var(--color-dark-blue);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner-lista h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+.toolbar {
+  margin-bottom: 1rem;
+}
+.listas-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+}
+.search-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.search-container .search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+}
+#pesquisa {
+  width: 100%;
+  padding: 12px 12px 12px 45px;
+  border-radius: 25px;
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+}
 
-/* Grid dos Pacientes */
 .pacientes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.5rem;
 }
 
-/* Estilo do Card do Paciente */
 .paciente-card {
-    background-color: white;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 .card-body-resumo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1.1rem;
-    font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
-/* Detalhes expansíveis (se você for usar no futuro) */
 .card-body-detalhes {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin-top: 1rem;
-    border-top: 1px solid var(--border-color);
-    padding-top: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
 }
 
 .paciente-card.expanded .card-body-detalhes {
-    max-height: 300px;
+  max-height: 300px;
 }
 
 .card-footer {
-    margin-top: auto;
-    padding-top: 1rem;
-    text-align: right;
+  margin-top: auto;
+  padding-top: 1rem;
+  text-align: right;
 }
 
 .toggle-details-btn {
-    color: var(--color-blue);
-    font-weight: 600;
-    cursor: pointer;
-    background: none;
-    border: none;
-    font-size: 0.9rem;
-    font-family: 'Poppins', sans-serif;
+  color: var(--color-blue);
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
 }
 
-/* Estilos do menu dropdown do header */
-.menu-button{background:transparent;border:none;cursor:pointer;color:var(--text-secondary);padding:5px;display:flex;align-items:center;justify-content:center}.menu-button .material-symbols-outlined{font-size:36px}.menu-container{position:relative}.dropdown-menu{display:none;flex-direction:column;justify-content:center;position:absolute;top:100%;right:0;z-index:1001;margin-top:10px;width:200px;background-color:#FFF;border-radius:12px;border:1px solid var(--border-color);box-shadow:0 4px 15px rgba(0,0,0,0.1);padding:10px 0}.dropdown-menu.active{display:flex}.dropdown-menu a{display:block;padding:12px 20px;color:var(--text-primary);text-decoration:none;font-size:1rem;transition:background-color .2s ease}.dropdown-menu a:hover{background-color:#f5f5f5}
+.menu-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-button .material-symbols-outlined {
+  font-size: 36px;
+}
+.menu-container {
+  position: relative;
+}
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1001;
+  margin-top: 10px;
+  width: 200px;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+.dropdown-menu.active {
+  display: flex;
+}
+.dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+.dropdown-menu a:hover {
+  background-color: #f5f5f5;
+}
 
-/* Estilos para o menu de ações do card (se for usar nesta página no futuro) */
-.card-actions{position:relative;}.menu-tres-pontos-btn{background:none;border:none;font-size:1.5rem;line-height:1;font-weight:600;cursor:pointer;padding:0 5px;color:var(--text-secondary);}.card-dropdown-menu{display:none;position:absolute;top:100%;right:0;background-color:white;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,0.1);z-index:10;min-width:250px;border:1px solid var(--border-color);overflow:hidden;}.card-dropdown-menu.active{display:block;}.card-dropdown-menu a{display:block;padding:12px 15px;color:var(--text-primary);text-decoration:none;font-size:0.9rem;}.card-dropdown-menu a:hover{background-color:#f5f5f5;}
+.card-actions {
+  position: relative;
+}
+.menu-tres-pontos-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0 5px;
+  color: var(--text-secondary);
+}
+.card-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 250px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+.card-dropdown-menu.active {
+  display: block;
+}
+.card-dropdown-menu a {
+  display: block;
+  padding: 12px 15px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.card-dropdown-menu a:hover {
+  background-color: #f5f5f5;
+}

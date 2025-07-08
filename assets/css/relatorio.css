@@ -1,8 +1,11 @@
-/* Importando estilos base para não repetir código (opcional) */
-/* @import url('admin.css'); */
+/* /assets/css/relatorio.css */
 
+/* Definições de Cores e Fontes */
 :root {
   --color-blue: #4a90e2;
+  --color-dark-blue: #3b5998;
+  --color-yellow: #f5a623;
+  --color-red-orange: #d9534f;
   --text-primary: #333;
   --text-secondary: #777;
   --background-light: #f8f9fa;
@@ -22,74 +25,85 @@ body {
   padding: 2rem;
 }
 
-/* Cabeçalho e Banner */
-.main-header {
+/* Estilo para o container dos filtros */
+.filtros-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 1rem;
-}
-.header-title {
-  font-size: 1.5rem;
-}
-.breadcrumb {
-  color: var(--text-secondary);
-  font-weight: 400;
-}
-.banner-lista {
-  background-color: var(--color-blue);
-  color: white;
-  padding: 2rem;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: #fff;
   border-radius: 12px;
-  margin: 2rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.banner-lista h2 {
-  margin: 0;
-  font-size: 2rem;
-}
-.toolbar {
-  margin-bottom: 1rem;
-}
-.listas-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text-secondary);
-}
-.search-container {
-  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   margin-bottom: 2rem;
 }
-.search-container .search-icon {
+
+.search-wrapper {
+  position: relative;
+  flex-grow: 1;
+}
+.search-wrapper .material-symbols-outlined {
   position: absolute;
   left: 15px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-secondary);
 }
-#pesquisa {
-  width: 100%;
-  padding: 12px 12px 12px 45px;
-  border-radius: 25px;
+#filtro-pesquisa,
+#filtro-ano,
+#filtro-curso {
+  padding: 10px 15px;
+  border-radius: 8px;
   border: 1px solid var(--border-color);
   font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+#filtro-pesquisa {
+  width: 100%;
+  padding-left: 45px;
+}
+.idade-slider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.idade-slider label {
+  font-weight: 500;
+}
+#idade-valor {
+  font-weight: 600;
+  color: var(--color-blue);
 }
 
-/* Grid dos Pacientes */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.sub-nav {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.sub-nav a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  margin-right: 2rem;
+}
+.sub-nav a.active {
+  color: var(--color-blue);
+  border-bottom: 3px solid var(--color-blue);
+}
+
 .pacientes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 1.5rem;
 }
 
-/* Estilo do Card do Paciente */
 .paciente-card {
   background-color: white;
   border: 1px solid var(--border-color);
@@ -108,12 +122,6 @@ body {
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
-
-.menu-tres-pontos {
-  cursor: pointer;
-  font-weight: 600;
-}
-
 .card-body-resumo {
   display: flex;
   align-items: center;
@@ -126,7 +134,6 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease-out;
-
   font-size: 0.9rem;
   color: var(--text-secondary);
   margin-top: 1rem;
@@ -142,7 +149,6 @@ body {
 .card-body-detalhes p strong {
   color: var(--text-primary);
 }
-
 .paciente-card.expanded .card-body-detalhes {
   max-height: 300px;
 }
@@ -152,7 +158,6 @@ body {
   padding-top: 1rem;
   text-align: right;
 }
-
 .toggle-details-btn {
   color: var(--color-blue);
   font-weight: 600;
@@ -163,57 +168,9 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.menu-button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: var(--text-secondary);
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.menu-button .material-symbols-outlined {
-  font-size: 36px;
-}
-.menu-container {
-  position: relative;
-}
-.dropdown-menu {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  z-index: 1001;
-  margin-top: 10px;
-  width: 200px;
-  background-color: #fff;
-  border-radius: 12px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
-}
-.dropdown-menu.active {
-  display: flex;
-}
-.dropdown-menu a {
-  display: block;
-  padding: 12px 20px;
-  color: var(--text-primary);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background-color 0.2s ease;
-}
-.dropdown-menu a:hover {
-  background-color: #f5f5f5;
-}
-
 .card-actions {
   position: relative;
 }
-
 .menu-tres-pontos-btn {
   background: none;
   border: none;
@@ -224,7 +181,6 @@ body {
   padding: 0 5px;
   color: var(--text-secondary);
 }
-
 .card-dropdown-menu {
   display: none;
   position: absolute;
@@ -238,11 +194,9 @@ body {
   border: 1px solid var(--border-color);
   overflow: hidden;
 }
-
 .card-dropdown-menu.active {
   display: block;
 }
-
 .card-dropdown-menu a {
   display: block;
   padding: 12px 15px;
@@ -250,7 +204,6 @@ body {
   text-decoration: none;
   font-size: 0.9rem;
 }
-
 .card-dropdown-menu a:hover {
   background-color: #f5f5f5;
 }

@@ -1,6 +1,3 @@
-// /assets/js/admin.js
-
-// Lógica para o menu dropdown (igual aos outros arquivos)
 const menuButton = document.getElementById("menuButton");
 const dropdownMenu = document.getElementById("dropdownMenu");
 
@@ -14,7 +11,6 @@ window.addEventListener("click", function () {
   }
 });
 
-// Lógica para carregar e contar os dados
 document.addEventListener("DOMContentLoaded", function () {
   fetch("http://localhost:3000/inscricoes")
     .then((response) => response.json())
@@ -27,13 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       inscricoes.forEach((inscricao) => {
-        // Se o status da inscrição existir nos nossos contadores, incrementa
         if (inscricao.status in contadores) {
           contadores[inscricao.status]++;
         }
       });
 
-      // Atualiza os números na tela
       document.getElementById("count-lista-espera").textContent =
         contadores.lista_de_espera;
       document.getElementById("count-espera-regulares").textContent =
