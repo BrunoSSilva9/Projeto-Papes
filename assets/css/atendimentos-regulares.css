@@ -1,0 +1,202 @@
+:root {
+  --color-blue: #4a90e2;
+  --color-dark-blue: #3b5998;
+  --color-yellow: #ffbb59;
+  --color-red-orange: #fe7547;
+  --text-primary: #333;
+  --text-secondary: #777;
+  --background-light: #f8f9fa;
+  --border-color: #e9ecef;
+}
+
+body,
+.admin-container,
+.main-header,
+.header-title,
+.breadcrumb,
+.toolbar,
+.listas-btn,
+.search-container,
+.search-icon,
+#pesquisa,
+.pacientes-grid,
+.paciente-card,
+.card-header,
+.card-body-resumo,
+.card-body-detalhes,
+.card-footer,
+.toggle-details-btn,
+.menu-button,
+.menu-container,
+.dropdown-menu,
+.card-actions,
+.menu-tres-pontos-btn,
+.card-dropdown-menu,
+.card-dropdown-menu a {
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-primary);
+  margin: 0;
+}
+.admin-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.header-title {
+  font-size: 1.5rem;
+}
+.breadcrumb {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+.banner-lista {
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.banner-lista h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+#pesquisa {
+  width: 100%;
+  padding: 12px 12px 12px 45px;
+  border-radius: 25px;
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+}
+.search-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.pacientes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+.paciente-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.card-body-resumo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.card-body-detalhes {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
+.card-body-detalhes p {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.paciente-card.expanded .card-body-detalhes {
+  max-height: 300px;
+}
+.card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  text-align: right;
+}
+.toggle-details-btn {
+  color: var(--color-blue);
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+}
+.menu-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.menu-container {
+  position: relative;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1001;
+}
+.card-actions {
+  position: relative;
+}
+.menu-tres-pontos-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+.card-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 250px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+.card-dropdown-menu.active {
+  display: block;
+}
+.card-dropdown-menu a {
+  display: block;
+  padding: 12px 15px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.card-dropdown-menu a:hover {
+  background-color: #f5f5f5;
+}
+
+.banner-lista.banner-red-orange {
+  background-color: var(--color-red-orange);
+}

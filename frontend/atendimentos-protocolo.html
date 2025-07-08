@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atendimento Protocolo - Painel Administrativo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <link rel="stylesheet" href="../assets/css/atendimentos-protocolo.css">
+</head>
+
+<body>
+  <div class="admin-container">
+    <header class="main-header">
+      <h1 class="header-title">
+        PAPSE | Painel Administrativo <span class="breadcrumb">> Atendimentos Protocolo</span>
+      </h1>
+      <div class="menu-container">
+        <button class="menu-button" id="menuButton">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="#">SAIR</a>
+          <a href="index.html">HOME</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="toolbar">
+        <button class="listas-btn"><span class="material-symbols-outlined">list</span> Outras listas</button>
+      </div>
+
+      <div class="banner-lista">
+        <h2><span id="total-pacientes">0</span> pessoas na lista de atendimento de protocolo</h2>
+        <span class="material-symbols-outlined info-icon">info</span>
+      </div>
+
+      <div class="search-container">
+        <span class="material-symbols-outlined search-icon">search</span>
+        <input type="search" id="pesquisa" placeholder="Pesquise aqui">
+      </div>
+
+      <div class="pacientes-grid" id="pacientes-container">
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/atendimento-protocolo.js" defer></script>
+</body>
+
+</html>

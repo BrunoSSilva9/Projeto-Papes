@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatórios - Painel Administrativo</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="../assets/css/relatorio.css">
+</head>
+
+<body>
+  <div class="admin-container">
+    <header class="main-header">
+      <h1 class="header-title">PAPSE | Painel Administrativo</h1>
+    </header>
+
+    <nav class="sub-nav">
+      <a href="admin.html">Gerenciar Atendimentos</a>
+      <a href="relatorio.html" class="active">Relatório</a>
+    </nav>
+
+    <main>
+      <div class="filtros-container">
+        <div class="search-wrapper">
+          <span class="material-symbols-outlined">search</span>
+          <input type="search" id="filtro-pesquisa" placeholder="Pesquise aqui">
+        </div>
+        <select id="filtro-ano">
+          <option value="">Ano</option>
+        </select>
+        <select id="filtro-curso">
+          <option value="">Curso</option>
+        </select>
+        <div class="idade-slider">
+          <label for="filtro-idade">Idade</label>
+          <input type="range" id="filtro-idade" min="15" max="40" value="35">
+          <span id="idade-valor">15 - 35</span>
+        </div>
+      </div>
+
+      <div class="pacientes-grid" id="relatorio-container">
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/relatorio.js" defer></script>
+</body>
+
+</html>

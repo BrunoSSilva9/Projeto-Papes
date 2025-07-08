@@ -13,7 +13,6 @@ window.addEventListener("click", function () {
   }
 });
 
-// Código para envio do formulário com async/await
 const formulario = document.getElementById("inscricaoForm");
 
 formulario.addEventListener("submit", async function (event) {
@@ -27,6 +26,7 @@ formulario.addEventListener("submit", async function (event) {
     dataNascimento: formulario["data-nascimento"].value,
     matricula: formulario.matricula.value,
     motivo: formulario.motivo.value,
+    status: "lista_de_espera",
   };
 
   try {

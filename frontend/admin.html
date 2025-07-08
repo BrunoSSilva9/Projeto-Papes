@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Administrativo - PAPSE</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+
+<body>
+  <div class="admin-container">
+    <header class="main-header">
+      <h1 class="header-title">PAPSE | Painel Administrativo</h1>
+      <div class="menu-container">
+        <button class="menu-button" id="menuButton">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="#">SAIR</a>
+          <a href="index.html">HOME</a>
+        </div>
+      </div>
+    </header>
+
+    <nav class="sub-nav">
+      <a href="admin.html" class="active">Gerenciar Atendimentos</a>
+      <a href="relatorio.html">Relatório</a>
+    </nav>
+
+    <main class="cards-grid">
+      <a href="lista-espera.html" class="card card-blue">
+        <div class="card-icon-wrapper">
+          <span class="material-symbols-outlined card-icon">groups</span>
+          <span class="count" id="count-lista-espera">0</span>
+        </div>
+        <div class="card-content">
+          <h2>Lista de espera</h2>
+          <p>Pacientes aguardando atendimento inicial.</p>
+        </div>
+      </a>
+
+      <a href="lista-espera-regulares.html" class="card card-yellow">
+        <div class="card-icon-wrapper">
+          <span class="material-symbols-outlined card-icon">drafts</span>
+          <span class="count" id="count-espera-regulares">0</span>
+        </div>
+        <div class="card-content">
+          <h2>Lista de espera para atendimentos regulares</h2>
+          <p>Pacientes aguardando atendimento regular.</p>
+        </div>
+      </a>
+
+      <a href="atendimentos-protocolo.html" class="card card-dark-blue">
+        <div class="card-icon-wrapper">
+          <span class="material-symbols-outlined card-icon">clinical_notes</span>
+          <span class="count" id="count-atendimento-protocolo">0</span>
+        </div>
+        <div class="card-content">
+          <h2>Lista de atendimentos de protocolo</h2>
+          <p>Pacientes em atendimento protocolar.</p>
+        </div>
+      </a>
+
+      <a href="atendimento-regulares.html" class="card card-red-orange">
+        <div class="card-icon-wrapper">
+          <span class="material-symbols-outlined card-icon">psychology</span>
+          <span class="count" id="count-atendimento-regular">0</span>
+        </div>
+        <div class="card-content">
+          <h2>Lista de atendimentos regulares</h2>
+          <p>Pacientes em atendimento psicológico regular.</p>
+        </div>
+      </a>
+    </main>
+  </div>
+
+  <script src="../assets/js/admin.js" defer></script>
+</body>
+
+</html>
