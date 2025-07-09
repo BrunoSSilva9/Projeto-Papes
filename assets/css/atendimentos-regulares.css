@@ -35,10 +35,6 @@ body,
 .card-dropdown-menu a {
 }
 
-.menu-button {
-  color: #fe7547;
-}
-
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--background-light);
@@ -204,3 +200,4 @@ body {
 .banner-lista.banner-red-orange {
   background-color: var(--color-red-orange);
 }
+

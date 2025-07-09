@@ -1,3 +1,4 @@
+
 :root {
   --color-blue: #4a90e2;
   --text-primary: #333;
@@ -19,6 +20,7 @@ body {
   padding: 2rem;
 }
 
+/* Cabeçalho e Banner */
 .main-header {
   display: flex;
   justify-content: space-between;
@@ -78,12 +80,14 @@ body {
   font-size: 1rem;
 }
 
+/* Grid dos Pacientes */
 .pacientes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 1.5rem;
 }
 
+/* Estilo do Card do Paciente */
 .paciente-card {
   background-color: white;
   border: 1px solid var(--border-color);
@@ -161,7 +165,7 @@ body {
   background: transparent;
   border: none;
   cursor: pointer;
-  color: #fe7547;
+  color: var(--text-secondary);
   padding: 5px;
   display: flex;
   align-items: center;

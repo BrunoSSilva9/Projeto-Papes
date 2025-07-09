@@ -152,7 +152,7 @@ body {
   background: transparent;
   border: none;
   cursor: pointer;
-  color: #fe7547;
+  color: var(--text-secondary);
   padding: 5px;
   display: flex;
   align-items: center;

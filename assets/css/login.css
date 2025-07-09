@@ -1,188 +1,196 @@
 :root {
-  --primary-blue: #2b468b;
-  --primary-orange: #fe7547;
-  --light-cream: #fdf5f1;
-  --dark-text: #333;
-  --light-text: #fff;
-  --border-color: #e0e0e0;
-  --icon-gray: #888;
+    --primary-blue: #2B468B;
+    --primary-orange: #FE7547;
+    --light-cream: #fdf5f1;
+    --dark-text: #333;
+    --light-text: #fff;
+    --border-color: #e0e0e0;
+    --icon-gray: #888;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  color: var(--dark-text);
-  height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-text);
+    height: 100vh;
 }
 
 .login-wrapper {
-  display: flex;
-  width: 100%;
-  height: 100%;
+    display: flex;
+    width: 100%;
+    height: 100%;
 }
 
 .login-section {
-  flex: 60%;
-  background-color: var(--primary-blue);
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
+    flex: 60%;
+    background-color: var(--primary-blue);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
 }
 
 .main-header {
-  width: max-content;
-  position: absolute;
-  top: 2rem;
-  left: 1rem;
+    width: max-content;
+    position: absolute;
+    top: 2rem;
+    left: 1rem;
 }
 
 .main-nav a {
-  color: var(--light-text);
-  text-decoration: none;
-  margin-right: 2rem;
-  color: #fff;
-  text-align: center;
-  font-family: "Nunito Sans";
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+    color: var(--light-text);
+    text-decoration: none;
+    margin-right: 2rem;
+    color: #FFF;
+    text-align: center;
+    font-family: "Nunito Sans";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
+/* .main-nav a.active {
+    font-weight: 600;
+    border-bottom: 2px solid var(--light-text);
+    padding-bottom: 5px;
+} */
+
 .login-card {
-  background-color: var(--light-text);
-  padding: 3rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 450px;
+    background-color: var(--light-text);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
 }
 
 .form-group {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
 }
 
 .input-wrapper {
-  position: relative;
+    position: relative;
 }
 
 .input-icon {
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--icon-gray);
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--icon-gray);
 }
 
 input[type="email"],
 input[type="password"] {
-  width: 100%;
-  padding: 12px 15px 12px 45px;
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  font-size: 1rem;
-  font-family: "Poppins", sans-serif;
+    width: 100%;
+    padding: 12px 15px 12px 45px; 
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
 }
 
+
 #email {
-  border-color: var(--primary-orange);
-  box-shadow: 0 0 0 3px rgba(242, 139, 108, 0.3);
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 3px rgba(242, 139, 108, 0.3);
 }
 
 input:focus {
-  outline: none;
-  border-color: var(--primary-orange);
-  box-shadow: 0 0 0 3px rgba(242, 139, 108, 0.3);
+    outline: none;
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 3px rgba(242, 139, 108, 0.3);
 }
 
 .submit-btn {
-  width: 195px;
-  height: 61px;
-  display: block;
-  margin: 1.5rem auto 0 auto;
-  padding: 16px;
-  background-color: var(--primary-orange);
-  color: var(--light-text);
-  border: none;
-  border-radius: 38px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    width: 195px;
+    height: 61px;
+    display: block;
+    margin: 1.5rem auto 0 auto;
+    padding: 16px;
+    background-color: var(--primary-orange);
+    color: var(--light-text);
+    border: none;
+    border-radius: 38px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .submit-btn:hover {
-  background-color: #e07a5f;
+    background-color: #e07a5f;
 }
 
+
 .info-section {
-  flex: 40%;
-  background-color: var(--light-cream);
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 4rem;
+    flex: 40%;
+    background-color: var(--light-cream);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 4rem;
 }
 
 .menu-button-login {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--primary-orange);
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-orange);
 }
 
 .menu-button-login svg {
-  stroke: currentColor;
+    stroke: currentColor;
 }
 
 .info-content {
-  text-align: center;
+    text-align: center;
 }
 
 .info-content p {
-  margin-bottom: 2rem;
-  color: #000;
-  font-family: "Nunito Sans";
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+    margin-bottom: 2rem;
+    color: #000;
+    font-family: "Nunito Sans";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 .info-content img {
-  max-width: 250px;
-  height: auto;
+    max-width: 250px;
+    height: auto;
 }
 
+
 @media (max-width: 992px) {
-  .login-wrapper {
-    flex-direction: column;
-  }
+    .login-wrapper {
+        flex-direction: column;
+    }
 
-  .login-section,
-  .info-section {
-    flex-basis: auto;
-  }
+    .login-section, .info-section {
+        flex-basis: auto;
+    }
 
-  .info-section {
-    padding: 4rem 2rem;
-  }
+    .info-section {
+        padding: 4rem 2rem;
+    }
 }

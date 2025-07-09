@@ -4,38 +4,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Painel Administrativo - PAPSE</title>
+  <title>Painel do Bolsista - PAPSE</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-  <link rel="stylesheet" href="../assets/css/admin.css">
+  <link rel="stylesheet" href="../assets/css/bolsista.css">
 </head>
 
 <body>
   <div class="admin-container">
     <header class="main-header">
-      <h1 class="header-title">PAPSE | Painel Administrativo</h1>
+      <h1 class="header-title">PAPSE | Painel de Atendimentos</h1>
       <div class="menu-container">
         <button class="menu-button" id="menuButton">
           <span class="material-symbols-outlined">menu</span>
         </button>
         <div class="dropdown-menu" id="dropdownMenu">
-          <a href="#">SAIR</a>
+          <a href="../frontend/login.html">SAIR</a>
           <a href="index.html">HOME</a>
         </div>
       </div>
     </header>
 
     <nav class="sub-nav">
-      <a href="admin.html" class="active">Gerenciar Atendimentos</a>
-      <a href="relatorio.html">Relatório</a>
+      <a href="bolsista.html" class="active">Seus Atendimentos</a>
     </nav>
 
     <main class="cards-grid">
-      <a href="lista-espera.html" class="card card-blue">
+      <a href="lista-espera.html" class="card card-blue invisible">
         <div class="card-icon-wrapper">
           <span class="material-symbols-outlined card-icon">groups</span>
           <span class="count" id="count-lista-espera">0</span>
@@ -46,7 +45,7 @@
         </div>
       </a>
 
-      <a href="lista-espera-regulares.html" class="card card-yellow">
+      <a href="lista-espera-regulares.html" class="card card-yellow invisible">
         <div class="card-icon-wrapper">
           <span class="material-symbols-outlined card-icon">drafts</span>
           <span class="count" id="count-espera-regulares">0</span>
