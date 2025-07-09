@@ -659,6 +659,18 @@
       "motivo": "oi",
       "dataEnvio": "2025-07-08T22:32:58.894Z",
       "status": "lista_de_espera"
+    },
+    {
+      "id": "4cce",
+      "nome": "Warley Junior",
+      "email": "warley@gmail.com",
+      "telefone": "94995256321",
+      "curso": "si",
+      "dataNascimento": "1985-05-25",
+      "matricula": "201520142025",
+      "motivo": "Muito Maney para administrar",
+      "dataEnvio": "2025-07-09T12:53:38.314Z",
+      "status": "lista_de_espera"
     }
   ]
 }

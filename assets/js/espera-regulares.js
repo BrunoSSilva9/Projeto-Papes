@@ -113,6 +113,9 @@ async function carregarPacientesEsperaRegular() {
                         <p><strong>Email:</strong> <span>${paciente.email}</span></p>
                         <p><strong>Número:</strong> <span>${paciente.telefone}</span></p>
                         <p><strong>Curso:</strong> <span>${paciente.curso}</span></p>
+                        <p><strong>Motivo:</strong> <span>${
+                          paciente.motivo
+                        }</span></p>
                     </div>
                     <div class="card-footer">
                         <button class="toggle-details-btn">Ver mais</button>

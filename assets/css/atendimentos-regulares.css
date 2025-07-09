@@ -127,6 +127,11 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+.menu-button{
+  color: #fe7547;
+}
+
 .paciente-card.expanded .card-body-detalhes {
   max-height: 300px;
 }

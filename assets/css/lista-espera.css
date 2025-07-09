@@ -165,7 +165,7 @@ body {
   background: transparent;
   border: none;
   cursor: pointer;
-  color: var(--text-secondary);
+  color: #fe7547;
   padding: 5px;
   display: flex;
   align-items: center;
