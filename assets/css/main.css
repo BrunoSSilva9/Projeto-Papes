@@ -1,258 +1,179 @@
+/* Reset e base */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
-html, body {
-    height: 100%; 
-    width: 100%;  
-    background-color: #FFF3E3;
-    overflow: hidden; 
-    font-family: "Nunito Sans", sans-serif; 
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #fff;
+    color: #333;
 }
 
-
-.fundo-retangulo { 
-    width: 170vw;   
-    height: 200vh; 
-
-    background: linear-gradient(to top left, #5773D3 50%); 
-    border: 10px solid #5773D3;
-    position: absolute; 
-    clip-path: polygon(
-        0% 0%,    
-        0% 50%,   
-        25% 50%,   
-        50% 0%    
-    );
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-
-.conteudo-pagina {
-    position: relative; 
-    z-index: 1;         
-    width: 100%;
-    height: 100%;
-}
-
-
+/* Header */
 .header-container {
-    display: flex;             
-    justify-content: space-between; 
-    align-items: center;       
-    width: 100%;               
-    padding: 13px 40px;        
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #23397e;
+    padding: 1rem 2rem;
+    color: white;
+    flex-wrap: wrap;
 }
-
-nav{
-    font-family: "Nunito Sans", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 34px;
-}
-
-/* .home{
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 34px;
-} */
-
-
 
 .navegacao ul {
-    list-style: none; 
-    margin: 0;
-    padding: 0;
+    list-style: none;
     display: flex;
+    gap: 1.5rem;
 }
 
-.navegacao ul li {
-    margin-right: 20px;
+.navegacao ul li a {
+    color: white;
+    font-weight: bold;
 }
 
-.navegacao ul li:last-child {
-    margin-right: 0; 
-}
-
-.navegacao a {
-    text-decoration: none;
-    color: #FFFFFF; 
-    font-size: 25px;
-    line-height: 34px; 
-    display: inline-block; 
-}
-
-
-.menu-icon { 
-    padding-top: 0;
-    padding-right: 0;
-    font-weight: 800;
-    font-size: 34px; 
-    color: #FE7547;
-    cursor: pointer; 
-    
-}
-
-
-
-/*  MEIO DA PÁGINA */
-
-
-main{
-    max-width: 60vw;
-    justify-content: left;
-
-}
-
-h1{
-
-    padding-top: 60px;
-    padding-left: 40px;
-    font-family: "Bebas Neue", sans-serif;
-    text-align: left;
-    font-size: 60px;
-    font-weight: 400;
-    color: #FFFFFF;
-    text-align: left;
-}
-
-h3{
-    padding-top: 60px;
-    padding-left: 40px;
-    font-family: "Nunito Sans", sans-serif;
-    text-align: left;
-    font-size: 40px;
-    font-weight: 700;
-    color: #FFFFFF;
-    text-align: left;
-}
-
-/*IMAGEM*/
-
-.img-papse{
-    position: absolute;
-    z-index: 0;
-    right: 0;          
-    bottom: 0;          
-    height: 80vh;      
-    width: auto;        
-    max-width: 50vw; 
-    padding-right: 5px;
-    padding-bottom: 5px;   
-
-    
-    transform: translateX(-150px)
-}
-
-/* BOTÃO */
-
-.botao-home{
-    align-items: center;
-    box-sizing: border-box;
-    position: absolute;
-    width: 273px;
-    height: 73.16px;
-    left: 294px;
-    top: 484px;
-    background: #FE7547;
-    border: 0px solid #000000;
-    border-radius: 38px;
-
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-    color: #FFFFFF;
-}
-
-
-
-
-
-
-
-/* FUNDO DA PÁGINA PRINCIPAL*/
-
-.fundo-pagina{
-   width: 1200px;
-    height: 250px;
-    background-color: #2B468B;
-    clip-path: polygon(0 0, 900px 0, 1200px 250px, 0 250px);
-    position: absolute; 
-    bottom: 0px;
-    z-index: 0;
-}
-
-p{
-    padding-top: 60px;
-    padding-left: 40px;
-    font-family: "Nunito Sans", sans-serif;
-    text-align: left;
-    font-size: 30px;
-    font-weight: 700;
-    color: #FFFFFF;
-    text-align: left;
-}
-
-
-
-.menu-button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: #FFF;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu-button .material-symbols-outlined {
-    font-size: 36px; 
-}
-
+/* Botão menu visível sempre */
 .menu-container {
     position: relative;
 }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    z-index: 1001;
-    margin-top: 10px;
-    width: 436px;
-    height: 214px;
-    background-color: #FFF;
-    border-radius: 26px;
-    border: 3px solid rgba(155, 155, 155, 0.63);
-    box-shadow: 10px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px 0;
+.menu-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 0.5rem;
 }
 
+/* Estilizando o menu dropdown */
+.dropdown-menu {
+    position: absolute;
+    top: 3.5rem;
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    flex-direction: column;
+    min-width: 160px;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    padding: 1rem;
+    text-decoration: none;
+    color: #23397e;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f2f2f2;
+}
+
+/* Quando ativo, mostra o menu */
 .dropdown-menu.active {
     display: flex;
 }
 
-.dropdown-menu a {
-    display: block;
-    text-decoration: none;
-    color: #000;
-    font-family: "Nunito Sans";
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-align: left;
-    padding: 15px 15px;
-    transition: background-color 0.2s ease;
+
+/* Conteúdo principal */
+.conteudo-pagina {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
 }
 
-.dropdown-menu a:hover {
-    background-color: #f5f5f5;
+.conteudo-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.texto-conteudo {
+    flex: 1;
+    min-width: 280px;
+}
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: #23397e;
+}
+
+h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.botao-home {
+    margin-top: 1.5rem;
+    background-color: #ff6b35;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Imagem */
+.img-papse {
+    flex: 1;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
+
+/* Rodapé */
+.fundo-pagina {
+    background-color: #23397e;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .conteudo-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .botao-home {
+        width: 100%;
+    }
+
+    .navegacao ul {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
 }
