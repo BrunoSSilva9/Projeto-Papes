@@ -1,5 +1,3 @@
-/* Importando estilos base para não repetir código (opcional) */
-/* @import url('admin.css'); */
 
 :root {
   --color-blue: #4a90e2;
@@ -167,7 +165,7 @@ body {
   background: transparent;
   border: none;
   cursor: pointer;
-  color: var(--text-secondary);
+  color: #fe7547;
   padding: 5px;
   display: flex;
   align-items: center;

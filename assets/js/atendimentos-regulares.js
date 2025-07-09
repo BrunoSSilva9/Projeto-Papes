@@ -94,6 +94,9 @@ async function carregarAtendimentosRegulares() {
                         <p><strong>Curso:</strong> <span>${
                           paciente.curso
                         }</span></p>
+                        <p><strong>Motivo:</strong> <span>${
+                          paciente.motivo
+                        }</span></p>
                         <p><strong>Bolsista:</strong> <span>${
                           paciente.bolsista || "Não definido"
                         }</span></p>

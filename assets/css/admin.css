@@ -136,7 +136,7 @@ body {
   background: transparent;
   border: none;
   cursor: pointer;
-  color: var(--text-secondary);
+  color: var(--color-red-orangey);
   padding: 5px;
   display: flex;
   align-items: center;
@@ -144,6 +144,7 @@ body {
 }
 .menu-button .material-symbols-outlined {
   font-size: 36px;
+  color: var(--color-red-orange);
 }
 .menu-container {
   position: relative;
@@ -157,8 +158,8 @@ body {
   right: 0;
   z-index: 1001;
   margin-top: 10px;
-  width: 436px;
-  height: 214px;
+  width: 200px;
+  height: 120px;
   background-color: #fff;
   border-radius: 26px;
   border: 3px solid rgba(155, 155, 155, 0.63);
@@ -174,7 +175,7 @@ body {
   text-decoration: none;
   color: #000;
   font-family: "Nunito Sans";
-  font-size: 30px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;

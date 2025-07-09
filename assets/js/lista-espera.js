@@ -128,6 +128,9 @@ async function carregarPacientes() {
                         <p><strong>Matrícula:</strong> <span>${
                           paciente.matricula
                         }</span></p>
+                        <p><strong>Motivo:</strong> <span>${
+                          paciente.motivo
+                        }</span></p>
                     </div>
                     <div class="card-footer">
                         <button class="toggle-details-btn">Ver mais</button>
