@@ -5,15 +5,20 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
     font-family: 'Nunito Sans', sans-serif;
     background-color: #fff;
     color: #333;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+body {
+    flex-grow: 1;
+    min-height: 100vh;
 }
 
 /* Header */
@@ -36,6 +41,7 @@ a {
 .navegacao ul li a {
     color: white;
     font-weight: bold;
+    text-decoration: none;
 }
 
 /* Botão menu visível sempre */
@@ -88,20 +94,22 @@ a {
     display: flex;
 }
 
-
 /* Conteúdo principal */
 .conteudo-pagina {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .conteudo-grid {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  text-align: center;
 }
 
 .texto-conteudo {
@@ -176,4 +184,24 @@ h3 {
         gap: 1rem;
         text-align: center;
     }
+}
+@media (min-width: 768px) {
+  .conteudo-grid {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    max-width: 1200px;
+    width: 100%;
+  }
+
+  .texto-conteudo {
+    flex: 1;
+    align-items: flex-start;
+  }
+
+  .img-papse {
+    flex: 1;
+    max-width: 400px;
+    width: 100%;
+  }
 }
